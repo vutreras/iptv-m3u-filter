@@ -9,7 +9,10 @@ const { InternalErrorException } = require('../exception/HttpException');
 module.exports = function(req, res, next) {
 
   res.responseOk = function(data) {
-    res.set({ 'content-type': 'text/plain; charset=utf-8' });
+    //res.set({ 'content-type': 'text/plain; charset=utf-8' });
+    res.setHeader('Content-Disposition', 'attachment; filename=file.m3u');
+    res.setHeader('Content-Transfer-Encoding', 'binary');
+    res.setHeader('Content-Type', 'application/octet-stream');
     res.status(200).send(data);
   };
 
