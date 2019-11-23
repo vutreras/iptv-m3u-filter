@@ -32,3 +32,4 @@ package-lock.json
 *.m3u
 
 get-public.sh
+status-public.sh
